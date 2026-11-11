@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.finvector/finvector",
+  "title": "FinVector",
+  "description": "Search SEC filings by meaning. Every result cites its filing, with a link to sec.gov.",
+  "version": "1.0.0",
+  "websiteUrl": "https://app.finvector.ai/api-docs",
+  "repository": {
+    "url": "https://github.com/MidasAI/finvector-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.finvector.ai/v1/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer followed by your FinVector API key, from https://app.finvector.ai/keys",
+          "isRequired": true,
+          "isSecret": true,
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "FinVector API key (fv_prod_...)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

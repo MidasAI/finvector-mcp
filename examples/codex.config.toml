@@ -1,0 +1,3 @@
+[mcp_servers.finvector]
+url = "https://api.finvector.ai/v1/mcp"
+bearer_token_env_var = "FINVECTOR_API_KEY"

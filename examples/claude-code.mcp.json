@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "finvector": {
+      "type": "http",
+      "url": "https://api.finvector.ai/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${FINVECTOR_API_KEY}"
+      }
+    }
+  }
+}

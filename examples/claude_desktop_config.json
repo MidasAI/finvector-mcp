@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "finvector": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://api.finvector.ai/v1/mcp",
+        "--transport",
+        "http-only",
+        "--header",
+        "Authorization:${AUTH_HEADER}"
+      ],
+      "env": {
+        "AUTH_HEADER": "Bearer <your API key>"
+      }
+    }
+  }
+}

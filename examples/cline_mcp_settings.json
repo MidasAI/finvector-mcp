@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "finvector": {
+      "type": "streamableHttp",
+      "url": "https://api.finvector.ai/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer <your API key>"
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

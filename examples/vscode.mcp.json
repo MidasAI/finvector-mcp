@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "finvector-key",
+      "description": "FinVector API key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "finvector": {
+      "type": "http",
+      "url": "https://api.finvector.ai/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:finvector-key}"
+      }
+    }
+  }
+}
