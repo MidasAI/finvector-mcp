@@ -4,9 +4,11 @@
 
 FinVector is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server and REST API. Ask a question in plain
 English and your agent gets back the passages from SEC filings, such as 10-Ks and 10-Qs, that answer it, best first, each with
-its company, form, filing date, section and a link to the filing on sec.gov.
+its company, form, filing date, section, a link to the filing on sec.gov, and a link that opens the passage highlighted in the
+FinVector app.
 
 - **Cited, not summarised.** Your agent quotes the filing, and `verify_quote` checks a quote word for word against its source.
+- **Broad coverage.** More than 5,000 US-listed companies and 1.6 million documents filed since late 2023, updated daily: 10-K, 10-Q, 8-K, proxies, registration statements, ownership filings and filings by foreign issuers. Ask `get_coverage` for the current list.
 - **Search by meaning.** Hybrid keyword and semantic search with reranking, so "dependence on one supplier" finds "single-source components".
 - **Screen by theme.** `screen_theme` lists which companies discuss a theme, quarter by quarter, with who is new and who dropped out.
 - **One line to connect.** Works in Claude Code, Cursor, Claude Desktop, VS Code, Codex, Gemini CLI, Zed, Cline and any client that speaks Streamable HTTP.
@@ -100,7 +102,7 @@ curl -s https://api.finvector.ai/v1/search \
 
 | Tool | What it does | Cost |
 |---|---|---|
-| `search_filings` | Finds the passages that answer a question, best first, each with its company, form, filing date, section and a link to sec.gov. | 1 credit |
+| `search_filings` | Finds the passages that answer a question, best first, each with its company, form, filing date, section, a link to sec.gov (`url`) and a link that opens it in the FinVector app (`app_url`). | 1 credit |
 | `screen_theme` | Which companies discuss a theme, most relevant first, quarter by quarter, with the names that are new and the ones that dropped out. | 2 credits |
 | `verify_quote` | Checks a quote word for word against the section it cites, and shows the closest passage and every difference when it does not match. | Free |
 | `get_filing_section` | Reads a whole section, such as a 10-K's risk factors, a page at a time. | Free |
